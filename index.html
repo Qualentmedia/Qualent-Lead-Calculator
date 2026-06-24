@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Qualent Media Lead Calculator</title>
+    <link rel="icon" type="image/png" href="assets/qualent-logo-transparent.png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="brand-block">
+          <span class="logo-plate">
+            <img src="assets/qualent-logo-cropped.png" alt="Qualent Media" />
+          </span>
+          <div>
+            <p class="eyebrow">LinkedIn Audience Intelligence</p>
+            <h1>Lead Calculator</h1>
+          </div>
+        </div>
+        <div class="source-pill">
+          <span id="sourceRows">99,840</span>
+          <small>data combinations</small>
+        </div>
+      </header>
+
+      <main>
+        <section class="filter-panel" aria-label="Audience filters">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Build Your Prospect Universe</p>
+              <h2>Select Targeting Criteria</h2>
+            </div>
+            <button class="secondary-action" id="resetFilters" type="button">Reset</button>
+          </div>
+          <div class="filters-grid" id="filters"></div>
+        </section>
+
+        <section class="report-panel" aria-label="Lead calculation report">
+          <div class="hero-metric">
+            <p>Estimated Prospect Count</p>
+            <strong id="totalProspects">0</strong>
+            <span id="matchSummary">Across all available targeting data</span>
+          </div>
+
+          <div class="metric-grid">
+            <article>
+              <span>Matched Data Rows</span>
+              <strong id="matchedRows">0</strong>
+            </article>
+            <article>
+              <span>Average Per Match</span>
+              <strong id="avgProspects">0</strong>
+            </article>
+            <article>
+              <span>Largest Segment</span>
+              <strong id="largestSegment">-</strong>
+            </article>
+          </div>
+
+          <div class="tabs" role="tablist" aria-label="Breakdown views">
+            <button class="tab is-active" data-breakdown="Country" type="button">Country</button>
+            <button class="tab" data-breakdown="Job Level" type="button">Job Level</button>
+            <button class="tab" data-breakdown="Industry" type="button">Industry</button>
+            <button class="tab" data-breakdown="Job Function" type="button">Job Function</button>
+            <button class="tab" data-breakdown="Employee Size" type="button">Employee Size</button>
+          </div>
+
+          <div class="breakdown-header">
+            <h2 id="breakdownTitle">Country Breakdown</h2>
+            <span id="breakdownCount">0 segments</span>
+          </div>
+          <div class="breakdown-list" id="breakdownList"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
